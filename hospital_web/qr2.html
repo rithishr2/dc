@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code for Payment Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <style>
+    #qrcode {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Scan to Open Payment Form</h1>
+  <div id="qrcode"></div>
+
+  <script>
+    // Generate QR code for local form page
+    new QRCode(document.getElementById("qrcode"), {
+      text: "http://localhost:8000/form.html", // URL for testing on local server
+      width: 128,
+      height: 128,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+  <script src="server.js"> </script> <!-- Add this line -->
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration Form</title>
+    <style>
+        /* General styles for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the form */
+        .form-container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title styles */
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Label and input field styles */
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Textarea specific styling */
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Button styling */
+        button {
+            background-color:crimson;
+            color: black;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: crimson;
+        }
+
+        /* Hover effect on form fields */
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Hospital Patient Registration Form</h2>
+        <form action="/submit-registration" method="POST">
+            <!-- Full Name -->
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full_name" required><br><br>
+            
+            <!-- Age -->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <!-- Contact Number -->
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required><br><br>
+            
+            <!-- Email Address -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <!-- Address -->
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea><br><br>
+            
+            <!-- Medical History -->
+            <label for="medical-history">Medical History (Optional):</label>
+            <textarea id="medical-history" name="medical_history" rows="4"></textarea><br><br>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="redirectToNextPage()">Register</button>
+          </form>
+      </div>
+      
+      <script>
+          // JavaScript function to redirect to the next page
+          function redirectToNextPage() {
+              // Redirect to the next page (e.g., "nextpage.html")
+              window.location.href = "nextpage.html"; // Change this URL to the page you want to redirect to
+          }
+      </script>
+</body>
+</html>

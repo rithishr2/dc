@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code for Web Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+
+  <h1>Scan this QR code to visit the web page</h1>
+  
+  <!-- The QR code will be generated here -->
+  <div id="qrcode"></div>
+
+  <script>
+    // URL of the web page you want to store in the QR code
+    var url = "https://www.example.com";
+
+    // Generate QR code with the URL
+    new QRCode(document.getElementById("qrcode"), {
+      text: url,  // This is the URL of the web page
+      width: 128,
+      height: 128
+    });
+  </script>
+
+</body>
+</html>
